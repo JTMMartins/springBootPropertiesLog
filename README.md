@@ -5,7 +5,7 @@ This simple project logs all springboot properties on Application startup **incl
 
 Instead of using Spring Environment object, wich does not guarantees that externalized properties values match the returned Map, we iterate over EnumerablePropertySources of the Environment. This resolves the values of the running Spring environment and guarantees that any overrided values will be correct. 
 
-In this project we opted just to log the properties, but you can let your imagination go wild, and do whatever you want with those properties (as checking them against some known values and fail fast if they don't match or encripting some specific properties in the log file).
+In this project we opted just to log the properties, but you can let your imagination go wild, and do whatever you want with those properties (as checking them against some known values and fail fast if they don't match or are not present, encripting some known specific properties in the log file).
 
 To achieve the result we want, it is fundamental that our application context is fully initialized and ensure that we check the properties very early,actually before the execution of any other bean.
 
